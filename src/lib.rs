@@ -251,4 +251,9 @@ impl Whisper {
         let mel = audio::log_mel_spectrogram(audio_data, self.mel_filters.clone());
         self.run(mel, language)
     }
+
+    pub fn recognize_from_audio_data(&self, audio_data: Vec<f32>, language: &str) -> String {
+        let mel = audio::log_mel_spectrogram(audio_data, self.mel_filters.clone());
+        self.run(mel, language)
+    }
 }
